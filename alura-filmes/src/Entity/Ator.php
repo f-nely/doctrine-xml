@@ -12,4 +12,6 @@ class Ator
     private $ultimoNome;
 
     private $ultimaAtualizacao;
+
+    private $filmes;
 }
