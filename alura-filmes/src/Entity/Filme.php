@@ -38,4 +38,21 @@ class Filme
         $this->atores->add($ator);
         $ator->addFilme($this);
     }
+
+    public function getTitulo(): string
+    {
+        return $this->titulo;
+    }
+
+    public function getIdiomaAudio(): Idioma
+    {
+        return $this->idiomaAudio;
+    }
+
+    public function getAtores(): array
+    {
+        return $this->atores->map(function (Ator $ator) {
+            return $ator->getNome();
+        })->toArray();
+    }
 }
