@@ -14,9 +14,15 @@
 
         <many-to-many field="atores" target-entity="Alura\Doctrine\Entity\Ator" mapped-by="filmes" />
         <many-to-one field="idiomaOriginal" target-entity="Alura\Doctrine\Entity\Idioma">
+            <cascade>
+                <cascade-persist />
+            </cascade>
             <join-column name="id_idioma_original" nullable="false" referenced-column-name="id_idioma" />
         </many-to-one>
         <many-to-one field="idiomaAudio" target-entity="Alura\Doctrine\Entity\Idioma">
+            <cascade>
+                <cascade-persist />
+            </cascade>
             <join-column name="id_idioma_audio" nullable="false" referenced-column-name="id_idioma" />
         </many-to-one>
 
