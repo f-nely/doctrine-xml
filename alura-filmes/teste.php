@@ -15,7 +15,5 @@ $ator->addFilme($filme);
 $ator->addFilme($filme2);
 
 $em->persist($ator);
-$em->persist($filme);
-$em->persist($filme2);
 
 $em->flush();
