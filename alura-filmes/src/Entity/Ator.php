@@ -35,4 +35,9 @@ class Ator
         $this->filmes->add($filme);
         $filme->addAtor($this);
     }
+
+    public function getNome(): string
+    {
+        return $this->primeiroNome . ' ' . $this->ultimoNome;
+    }
 }
