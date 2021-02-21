@@ -9,23 +9,22 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Filme
 {
     private $id;
-
     private $titulo;
-
+    private $anoLancamento;
+    private $ultimaAtualizacao;
+    private $idiomaAudio;
+    private $idiomaOriginal;
+    private $atores;
     private $sinopse;
 
-    private $anoLancamento;
-
-    private $ultimaAtualizacao;
-
-    private $atores;
-
-    public function __construct(?int $id, string $titulo, string $anoLancamento, ?string $sinopse = null)
+    public function __construct(?int $id, string $titulo, string $anoLancamento, Idioma $idiomaAudio, Idioma $idiomaOriginal, ?string $sinopse = null)
     {
         $this->id = $id;
         $this->titulo = $titulo;
-        $this->sinopse = $sinopse;
+        $this->idiomaAudio = $idiomaAudio;
+        $this->idiomaOriginal = $idiomaOriginal;
         $this->anoLancamento = $anoLancamento;
+        $this->sinopse = $sinopse;
         $this->ultimaAtualizacao = new \DateTimeImmutable();
         $this->atores = new ArrayCollection();
     }
